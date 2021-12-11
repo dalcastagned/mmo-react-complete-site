@@ -45,13 +45,13 @@ const Navbar = (props) => {
                 </MobileIcon>
                 <NavMenu onClick={handleClickMenu} click={clickMenu}>
                     <NavItem>
-                        <NavLinks to='/'>Início</NavLinks>
+                        <NavLinks to='/'>Home</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to='/jogos'>Jogos</NavLinks>
+                        <NavLinks to='/jogos'>Games</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to='/noticias'>Notícias</NavLinks>
+                        <NavLinks to='/noticias'>News</NavLinks>
                     </NavItem>
                     <NavItemBtn>
                         {props.isDarkTheme

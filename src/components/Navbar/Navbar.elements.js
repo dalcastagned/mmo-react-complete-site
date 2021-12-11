@@ -12,7 +12,7 @@ export const Nav = styled.nav`
     font-size: 20px;
     position: sticky;
     top: 0;
-    border-bottom: 2px solid ${(props) => props.theme.borderNavbar};
+    border-bottom: 2px solid ${(props) => props.theme.border};
 `
 
 export const NavbarContainer = styled(Container)`
@@ -25,7 +25,7 @@ export const NavbarContainer = styled(Container)`
 
 export const NavLogo = styled(Link)`
     color: ${(props) => props.theme.text};
-    justify-self: flex-start;
+    justify-content: center;
     cursor: pointer;
     text-decoration: none;
     font-size: 25px;
