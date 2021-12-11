@@ -32,6 +32,7 @@ const Navbar = (props) => {
 
     const changeTheme = () => {
         props.setIsDarkTheme(!props.isDarkTheme)
+        localStorage.setItem("theme", !props.isDarkTheme);
     }
 
     return (

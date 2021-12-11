@@ -62,3 +62,6 @@ export const PageStatistics = styled.span`
     color: ${(props) => props.theme.text};
     padding: 20px;
 `
+
+
+

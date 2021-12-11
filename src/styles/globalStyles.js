@@ -28,6 +28,23 @@ export const Container = styled.div`
         padding-right: 30px;
         padding-left: 30px; 
     }
-`;
+`
+
+export const LoadingIMG = styled.img`
+    height: 100px;
+    width: 100px;
+`
+export const ErrorImg = styled.img`
+    height: 100px;
+    width: 100px;
+`
+
+export const ContainerImages = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100vw;
+`
 
 export default GlobalStyle

@@ -8,9 +8,14 @@ import {
     TitleGame,
     ThumbnailGame,
     ShortDescriptionGame
-} from './GameList.elements'
+} from './GameList.elements';
+import {
+    ContainerImages,
+    ErrorImg,
+    LoadingIMG,
+} from '../../styles/globalStyles'
 
-const GameList = () => {
+const GameList = (props) => {
     const [game, setGame] = useState([]);
     const [loaded, setLoaded] = useState(false)
     const [error, setError] = useState(0);
@@ -22,26 +27,33 @@ const GameList = () => {
                 setLoaded(true);
             })
             .catch(function (err) {
-                setError(err.response.status);
+                setError(true);
                 setLoaded(true);
             });
     }, []);
 
     if (error === true) {
-        return (<h1>Erro!!</h1>)
+        return (
+            <ContainerImages>
+                <ErrorImg src='https://i.ibb.co/GPBYtqK/error.png' alt='Error!' />
+            </ContainerImages>
+        )
     }
     else if (loaded === false) {
         return (
-            <>
-                <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt='loading...' />
-            </>
+            <ContainerImages>
+                {props.isDarkTheme
+                    ? <LoadingIMG src='https://i.ibb.co/CmhYx2h/loading-light.gif' alt='loading...' />
+                    : <LoadingIMG src='https://i.ibb.co/9cV76wq/loading-dark.gif' alt='loading...' />
+                }
+            </ContainerImages>
         )
     } else {
         return (
             <>
                 <PageTitle>Game List</PageTitle>
                 <PageStatistics>
-                    Total games found: {game.length} 
+                    Total games found: {game.length}
                 </PageStatistics>
                 <ContainerGame>
                     {game.map((game) => (
