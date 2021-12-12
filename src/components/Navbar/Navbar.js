@@ -49,10 +49,10 @@ const Navbar = (props) => {
                         <NavLinks to='/'>Home</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to='/jogos'>Games</NavLinks>
+                        <NavLinks to='/games'>Games</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to='/noticias'>News</NavLinks>
+                        <NavLinks to='/news'>News</NavLinks>
                     </NavItem>
                     <NavItemBtn>
                         {props.isDarkTheme

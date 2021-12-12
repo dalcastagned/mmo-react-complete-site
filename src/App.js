@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import GlobalStyle from "./styles/globalStyles";
 import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from './styles/theme'
-import { BrowserRouter as Router } from "react-router-dom";
-import { GameList, Navbar } from "./components";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navbar } from "./components";
+import Home from './pages/HomePage/Home';
+import Games from "./pages/GameList/Games";
+import News from "./pages/News/News";
 
 
 function App() {
@@ -24,7 +27,11 @@ function App() {
       <Router>
         <GlobalStyle />
         <Navbar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
-        <GameList isDarkTheme={isDarkTheme} />
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/games" element={<Games isDarkTheme={isDarkTheme}/>} />
+          <Route path="/news" element={<News/>} />
+        </Routes>
       </Router>
     </ThemeProvider>
   );
