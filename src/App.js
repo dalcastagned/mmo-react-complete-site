@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from './styles/theme'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components";
-import Home from './pages/HomePage/Home';
+import HomePage from './pages/HomePage/HomePage';
 import Games from "./pages/GameList/Games";
 import News from "./pages/News/News";
 
@@ -28,7 +28,7 @@ function App() {
         <GlobalStyle />
         <Navbar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<HomePage isDarkTheme={isDarkTheme}/>} />
           <Route path="/games" element={<Games isDarkTheme={isDarkTheme}/>} />
           <Route path="/news" element={<News isDarkTheme={isDarkTheme}/>} />
         </Routes>
