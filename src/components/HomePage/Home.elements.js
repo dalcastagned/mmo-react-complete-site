@@ -13,10 +13,11 @@ export const ContainerHome = styled.div`
 
 export const TitileHome = styled.h1`
     color: ${(props) => props.theme.text};
+    padding: 0 10px;
 `
 
 export const DescriptionHome = styled.h2`
-    padding-top: 20px;
+    padding: 20px 10px 0 10px;
     color: ${(props) => props.theme.text};
 `
 
@@ -34,7 +35,9 @@ export const ButtonPage = styled(Link)`
     font-size: 20px;
     border: none;
     text-align: center;
-    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     border-radius: 10px;
     color: ${(props) => props.theme.buttonThemeTextColor};

@@ -10,7 +10,7 @@ import {
 const Home = () => {
     return (
         <ContainerHome>
-            <TitileHome>Welcome to BestGames!</TitileHome>
+            <TitileHome>Welcome to BestGames</TitileHome>
             <DescriptionHome>Here you will find everything about games!</DescriptionHome>
             <ContainerButtons>
                 <ButtonPage to='/games'>Games</ButtonPage>
