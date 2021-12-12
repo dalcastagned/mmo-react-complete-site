@@ -20,6 +20,7 @@ export const CardGame = styled.div`
     border: 2px solid ${(props) => props.theme.border};
     border-radius: 10px;
     width: 400px;
+    cursor: pointer;
 
     @media screen and (max-width: 420px){
         width: 300px;
@@ -33,6 +34,7 @@ export const CardGame = styled.div`
 export const TitleGame = styled.h2`
     color: ${(props) => props.theme.text};
     padding-bottom: 20px;
+    
 `
 
 export const ThumbnailGame = styled.img`

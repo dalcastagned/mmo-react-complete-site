@@ -7,6 +7,7 @@ import { Navbar } from "./components";
 import HomePage from './pages/HomePage/HomePage';
 import Games from "./pages/GameList/Games";
 import News from "./pages/News/News";
+import GameDetails from "./pages/GameDetails/Game";
 import ScrollToTop from "./utils/ScrollToTop";
 
 
@@ -32,7 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage isDarkTheme={isDarkTheme}/>} />
           <Route path="/games" element={<Games isDarkTheme={isDarkTheme}/>} />
-          <Route path="/news" element={<News isDarkTheme={isDarkTheme}/>} />
+          <Route path="/news" element={<News isDarkTheme={isDarkTheme}/>} /> <Route path="/game/:id" element={<GameDetails isDarkTheme={isDarkTheme}/>} />
         </Routes>
       </Router>
     </ThemeProvider>

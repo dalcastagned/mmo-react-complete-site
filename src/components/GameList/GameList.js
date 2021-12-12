@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router";
 import { getGameData } from '../../services/Api';
 import { SearchBar } from "../SearchBar/SearchBar";
 import {
@@ -21,6 +22,7 @@ const GameList = ({isDarkTheme}) => {
     const [loaded, setLoaded] = useState(false)
     const [error, setError] = useState(0);
     const [filteredGames, setFilteredGames] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         getGameData("games")
@@ -63,7 +65,7 @@ const GameList = ({isDarkTheme}) => {
                 />
                 <ContainerGame>
                     {filteredGames.map((game) => (
-                        <CardGame>
+                        <CardGame onClick={() => navigate ("/game/" + game.id)}>
                             <TitleGame>{game.title}</TitleGame>
                             <ThumbnailGame src={game.thumbnail} alt={`${game.title} game thumbnail`} />
                             <ShortDescriptionGame>{game.short_description.length > 130
