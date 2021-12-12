@@ -58,7 +58,8 @@ export const ShortDescriptionNews = styled.p`
 
 export const PageTitle = styled.h1`
     color: ${(props) => props.theme.text};
-    padding: 20px;
+    padding: 20px 0;
+    text-align: center;
 `
 
 export const PageStatistics = styled.span`

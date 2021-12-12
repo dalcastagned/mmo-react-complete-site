@@ -16,7 +16,7 @@ import {
     LightIcon
 } from './Navbar.elements'
 
-const Navbar = (props) => {
+const Navbar = ({isDarkTheme, setIsDarkTheme}) => {
 
     const [clickMenu, setClick] = useState(false)
 
@@ -31,8 +31,8 @@ const Navbar = (props) => {
     }
 
     const changeTheme = () => {
-        props.setIsDarkTheme(!props.isDarkTheme)
-        localStorage.setItem("theme", !props.isDarkTheme);
+        setIsDarkTheme(!isDarkTheme)
+        localStorage.setItem("theme", !isDarkTheme);
     }
 
     return (
@@ -55,7 +55,7 @@ const Navbar = (props) => {
                         <NavLinks to='/news'>News</NavLinks>
                     </NavItem>
                     <NavItemBtn>
-                        {props.isDarkTheme
+                        {isDarkTheme
                             ? <ThemeButton onClick={changeTheme}><LightIcon /></ThemeButton>
                             : <ThemeButton onClick={changeTheme}><DarkIcon /> </ThemeButton>
                         }

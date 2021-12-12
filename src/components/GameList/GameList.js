@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getGameData } from '../../services/Api';
+import { SearchBar } from "../SearchBar/SearchBar";
 import {
     PageTitle,
-    PageStatistics,
     ContainerGame,
     CardGame,
     TitleGame,
@@ -15,10 +15,12 @@ import {
     LoadingIMG,
 } from '../../styles/globalStyles'
 
-const GameList = (props) => {
+
+const GameList = ({isDarkTheme}) => {
     const [game, setGame] = useState([]);
     const [loaded, setLoaded] = useState(false)
     const [error, setError] = useState(0);
+    const [filteredGames, setFilteredGames] = useState([]);
 
     useEffect(() => {
         getGameData("games")
@@ -42,7 +44,7 @@ const GameList = (props) => {
     else if (loaded === false) {
         return (
             <ContainerImages>
-                {props.isDarkTheme
+                {isDarkTheme
                     ? <LoadingIMG src='https://i.ibb.co/CmhYx2h/loading-light.gif' alt='loading...' />
                     : <LoadingIMG src='https://i.ibb.co/9cV76wq/loading-dark.gif' alt='loading...' />
                 }
@@ -51,12 +53,16 @@ const GameList = (props) => {
     } else {
         return (
             <>
+                
                 <PageTitle>Game List</PageTitle>
-                <PageStatistics>
-                    Total games found: {game.length}
-                </PageStatistics>
+                <SearchBar
+                    sourceList={game}
+                    setList={setFilteredGames}
+                    listSize={filteredGames.length}
+                    placeholder={"Search Games"}
+                />
                 <ContainerGame>
-                    {game.map((game) => (
+                    {filteredGames.map((game) => (
                         <CardGame>
                             <TitleGame>{game.title}</TitleGame>
                             <ThumbnailGame src={game.thumbnail} alt={`${game.title} game thumbnail`} />

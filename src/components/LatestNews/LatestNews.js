@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getLatestNews } from '../../services/Api';
+import { SearchBar } from "../SearchBar/SearchBar";
 import {
     PageTitle,
-    PageStatistics,
     ContainerNews,
     CardNews,
     TitleNews,
@@ -16,10 +16,11 @@ import {
     LoadingIMG,
 } from '../../styles/globalStyles'
 
-const LatestNews = (props) => {
+const LatestNews = ({isDarkTheme}) => {
     const [latestNews, setlatestNews] = useState([]);
     const [loaded, setLoaded] = useState(false)
     const [error, setError] = useState(0);
+    const [filteredNews, setFilteredNews] = useState([]);
 
     useEffect(() => {
         getLatestNews("latestnews")
@@ -43,7 +44,7 @@ const LatestNews = (props) => {
     else if (loaded === false) {
         return (
             <ContainerImages>
-                {props.isDarkTheme
+                {isDarkTheme
                     ? <LoadingIMG src='https://i.ibb.co/CmhYx2h/loading-light.gif' alt='loading...' />
                     : <LoadingIMG src='https://i.ibb.co/9cV76wq/loading-dark.gif' alt='loading...' />
                 }
@@ -53,11 +54,14 @@ const LatestNews = (props) => {
         return (
             <>
                 <PageTitle>Latest News</PageTitle>
-                <PageStatistics>
-                    Total news found: {latestNews.length}
-                </PageStatistics>
+                <SearchBar
+                    sourceList={latestNews}
+                    setList={setFilteredNews}
+                    listSize={filteredNews.length}
+                    placeholder={"Search News"}
+                />
                 <ContainerNews>
-                    {latestNews.map((latestNews) => (
+                    {filteredNews.map((latestNews) => (
                         <CardNews href={latestNews.article_url} target="_blank">
                             <ThumbnailNews src={latestNews.thumbnail} alt={`${latestNews.title} News thumbnail`} />
                             <ContainerInfoNews>
