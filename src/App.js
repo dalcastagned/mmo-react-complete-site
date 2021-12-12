@@ -7,6 +7,7 @@ import { Navbar } from "./components";
 import HomePage from './pages/HomePage/HomePage';
 import Games from "./pages/GameList/Games";
 import News from "./pages/News/News";
+import ScrollToTop from "./utils/ScrollToTop";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Router>
         <GlobalStyle />
         <Navbar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage isDarkTheme={isDarkTheme}/>} />
           <Route path="/games" element={<Games isDarkTheme={isDarkTheme}/>} />
