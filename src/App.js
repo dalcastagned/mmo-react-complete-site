@@ -30,7 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/games" element={<Games isDarkTheme={isDarkTheme}/>} />
-          <Route path="/news" element={<News/>} />
+          <Route path="/news" element={<News isDarkTheme={isDarkTheme}/>} />
         </Routes>
       </Router>
     </ThemeProvider>

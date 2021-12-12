@@ -1,10 +1,9 @@
 import React from 'react'
+import { LatestNews } from '../../components'
 
-const News = () => {
+const News = (props) => {
     return (
-        <div>
-            News
-        </div>
+        <LatestNews isDarkTheme={props.isDarkTheme}/>
     )
 }
 

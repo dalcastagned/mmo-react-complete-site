@@ -14,3 +14,9 @@ export const getGameData = (url) => {
         return response.data
     })
 }
+
+export const getLatestNews = (url) => {
+  return instance.get(url).then(response => {
+      return response.data
+  })
+}
