@@ -6,6 +6,7 @@ import {
     ErrorImg,
     LoadingIMG,
 } from '../../styles/globalStyles'
+import GameComment from '../GameComment/GameComment';
 import SlideShow from '../SlideShow/SlideShow.js';
 import {
     GameTitleContainer,
@@ -109,6 +110,7 @@ const GameDetails = ({ isDarkTheme }) => {
                         <RequirimentsDescription>{game.minimum_system_requirements.storage}</RequirimentsDescription>
                     </RequirimentsInfo>
                 </RequirementsContainer>
+                <GameComment game={game.title} id={id}/>
 
             </>
         )
