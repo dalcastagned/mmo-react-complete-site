@@ -3,7 +3,7 @@ import GlobalStyle from "./styles/globalStyles";
 import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from './styles/theme'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navbar } from "./components";
+import { Copyright, Navbar } from "./components";
 import HomePage from './pages/HomePage/HomePage';
 import Games from "./pages/GameList/Games";
 import News from "./pages/News/News";
@@ -35,6 +35,7 @@ function App() {
           <Route path="/games" element={<Games isDarkTheme={isDarkTheme}/>} />
           <Route path="/news" element={<News isDarkTheme={isDarkTheme}/>} /> <Route path="/game/:id" element={<GameDetails isDarkTheme={isDarkTheme}/>} />
         </Routes>
+        <Copyright/>
       </Router>
     </ThemeProvider>
   );

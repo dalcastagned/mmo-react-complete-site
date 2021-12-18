@@ -7,17 +7,16 @@ export const ContainerHome = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: calc(100vh - 120px);
     text-align: center;
 `
 
 export const TitileHome = styled.h1`
     color: ${(props) => props.theme.text};
-    padding: 0 10px;
 `
 
 export const DescriptionHome = styled.h2`
-    padding: 20px 10px 0 10px;
+    padding-top: 20px;
     color: ${(props) => props.theme.text};
 `
 
