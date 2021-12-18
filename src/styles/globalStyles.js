@@ -44,7 +44,7 @@ export const ContainerImages = styled.div`
     justify-content: center;
     align-items: center;
     height: 90vh;
-    width: 100vw;
+    width: 100%;
 `
 
 export default GlobalStyle
