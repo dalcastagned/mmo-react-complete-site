@@ -1,4 +1,4 @@
-# MMO complete site with react and styled components (in development)
+# MMO complete site with react and styled components
 
 # Getting Started with Create React App
 
