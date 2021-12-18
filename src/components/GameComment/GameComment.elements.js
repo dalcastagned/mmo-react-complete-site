@@ -82,7 +82,13 @@ export const CommentContainer = styled.div`
    min-height: 100px; 
    display: flex;
    flex-direction: row;
-   justify-content: center;
+   justify-content: center; 
+   -webkit-touch-callout: none; 
+   -webkit-user-select: none; 
+   -khtml-user-select: none; 
+   -moz-user-select: none; 
+   -ms-user-select: none; 
+   user-select: none; 
 `
 export const CommentInfoContainer = styled.div`
    margin: 20px;
