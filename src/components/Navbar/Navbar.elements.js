@@ -13,6 +13,7 @@ export const Nav = styled.nav`
     position: sticky;
     top: 0;
     border-bottom: 2px solid ${(props) => props.theme.border};
+    z-index: 999;
 `
 
 export const NavbarContainer = styled(Container)`

@@ -64,10 +64,10 @@ const GameList = ({isDarkTheme}) => {
                     placeholder={"Search Games"}
                 />
                 <ContainerGame>
-                    {filteredGames.map((game) => (
-                        <CardGame onClick={() => navigate ("/game/" + game.id)}>
+                    {filteredGames.map((game, index) => (
+                        <CardGame key={index} onClick={() => navigate ("/game/" + game.id)}>
                             <TitleGame>{game.title}</TitleGame>
-                            <ThumbnailGame src={game.thumbnail} alt={`${game.title} game thumbnail`} />
+                            <ThumbnailGame src={game.thumbnail} loading="lazy" alt={`${game.title} game thumbnail`} />
                             <ShortDescriptionGame>{game.short_description.length > 130
                                 ? game.short_description.substring(0, 127) + "..."
                                 : game.short_description}</ShortDescriptionGame>

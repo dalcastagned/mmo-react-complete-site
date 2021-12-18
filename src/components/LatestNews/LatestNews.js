@@ -61,8 +61,8 @@ const LatestNews = ({isDarkTheme}) => {
                     placeholder={"Search News"}
                 />
                 <ContainerNews>
-                    {filteredNews.map((latestNews) => (
-                        <CardNews href={latestNews.article_url} target="_blank">
+                    {filteredNews.map((latestNews, index) => (
+                        <CardNews key={index}  href={latestNews.article_url} target="_blank">
                             <ThumbnailNews src={latestNews.thumbnail} alt={`${latestNews.title} News thumbnail`} />
                             <ContainerInfoNews>
                                 <TitleNews>{latestNews.title}</TitleNews>

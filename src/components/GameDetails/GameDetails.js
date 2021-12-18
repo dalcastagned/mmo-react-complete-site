@@ -6,12 +6,12 @@ import {
     ErrorImg,
     LoadingIMG,
 } from '../../styles/globalStyles'
+import SlideShow from '../SlideShow/SlideShow.js';
 import {
     GameTitleContainer,
     GameTitle,
     GameRelease,
     GamePictureContainer,
-    GamePicture,
     GameInfoContainer,
     GameInfo,
     DescriptionContainer,
@@ -37,7 +37,6 @@ const GameDetails = ({ isDarkTheme }) => {
             .then((data) => {
                 setGame(data);
                 setLoaded(true);
-                console.log(data)
             })
             .catch(function (err) {
                 setError(true);
@@ -69,7 +68,7 @@ const GameDetails = ({ isDarkTheme }) => {
                     <GameRelease>{`(${game.release_date})`}</GameRelease>
                 </GameTitleContainer>
                 <GamePictureContainer>
-                    <GamePicture src={game.screenshots[0].image} />
+                    <SlideShow screenshots={game.screenshots} game={game.title} />
                 </GamePictureContainer>
                 <GameInfoContainer>
                     <GameInfo>

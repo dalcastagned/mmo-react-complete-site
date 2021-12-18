@@ -21,12 +21,16 @@ export const GameRelease = styled.h2`
 `
 
 export const GamePictureContainer = styled.div`
-    display: flex;
-    justify-content: center;
-`
-export const GamePicture = styled.img`
-    width: 80vw;
-    border-radius: 10px;
+    margin: 0 auto;
+    width: 60vw;
+
+    @media screen and (max-width: 1280px){
+        width: 80vw;
+    }
+
+    @media screen and (max-width: 980px){
+        width: 95vw;
+    }
 `
 
 export const GameInfoContainer = styled.div`
