@@ -31,8 +31,10 @@ const GameComment = ({ game }) => {
         commentId = dataComments.length + 1
     }
 
+
     useEffect(() => {
         setRenderComments(dataComments)
+        // eslint-disable-next-line
     },[]);
 
     const sumLike = (index) => {
