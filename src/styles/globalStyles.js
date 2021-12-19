@@ -43,7 +43,7 @@ export const ContainerImages = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: calc(100vh - 120px);
     width: 100%;
 `
 
